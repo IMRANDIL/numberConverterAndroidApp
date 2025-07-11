@@ -4,16 +4,20 @@
 
 An Android utility app that lets you quickly convert a list of numbers into CSV-formatted text — wrapped in single quotes and comma-separated. Built with Kotlin and Material Design.
 
-![App Icon](https://github.com/IMRANDIL/number-converter-app/assets/icon.png) <!-- Replace with actual hosted icon if available -->
-
----
-
 ## ✨ Features
+
+![WhatsApp Image 2025-07-11 at 4 19 37 PM](https://github.com/user-attachments/assets/38f2df29-c0c7-4083-bf9c-e9e86ef3f647)
+![WhatsApp Image 2025-07-11 at 4 19 37 PM (1)](https://github.com/user-attachments/assets/fa444d18-a27a-4aff-973c-b61180dde69c)
+
+![WhatsApp Image 2025-07-11 at 4 19 36 PM](https://github.com/user-attachments/assets/658e945a-3961-446c-ae9c-fa4c527e113a)
+
+![WhatsApp Image 2025-07-11 at 4 19 36 PM (1)](https://github.com/user-attachments/assets/9f3210fa-0866-4684-a753-c55537cd9e93)
+
+![WhatsApp Image 2025-07-11 at 4 19 36 PM (2)](https://github.com/user-attachments/assets/fd65ac28-9f53-4557-8171-54b4eb40b1c2)
 
 - 🧮 **Number Conversion**  
   Converts numbers (entered line-by-line or space/comma separated) into comma-separated values wrapped in single quotes:
 ```
-
 Input: 123 456 789
 Output: '123', '456', '789'
 
