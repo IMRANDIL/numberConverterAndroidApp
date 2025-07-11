@@ -1,8 +1,3 @@
-Here’s a clean, professional, and informative `README.md` file tailored for your **Number to CSV Converter Android app**, highlighting its features, installation steps, usage, and screenshots section.
-
----
-
-### ✅ `README.md`:
 
 ```markdown
 # 📱 Number to CSV Converter App
@@ -38,12 +33,6 @@ Quickly reset input and output with one tap.
 
 ---
 
-## 📸 Screenshots
-
-> _Coming soon..._  
-> (You can add screenshots by dragging them to this section once hosted or captured.)
-
----
 
 ## 🚀 Installation
 
