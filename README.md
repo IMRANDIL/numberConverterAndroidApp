@@ -6,15 +6,11 @@ An Android utility app that lets you quickly convert a list of numbers into CSV-
 
 ## ✨ Features
 
-
-
-
 - 🧮 **Number Conversion**  
   Converts numbers (entered line-by-line or space/comma separated) into comma-separated values wrapped in single quotes:
 ```
 Input: 123 456 789
 Output: '123', '456', '789'
-![WhatsApp Image 2025-07-11 at 4 19 37 PM](https://github.com/user-attachments/assets/ab454373-5fc1-4d87-b2f5-480b3b55b937)
 
 
 ````
