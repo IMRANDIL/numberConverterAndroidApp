@@ -11,28 +11,55 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Title -->
         <TextView
             android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Number to CSV Converter"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textColor="?attr/colorOnBackground"
             android:layout_gravity="center" />
 
+        <!-- Theme Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mode"
+                android:textColor="?attr/colorOnBackground"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp" />
+
+            <Switch
+                android:id="@+id/themeToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Input -->
         <EditText
             android:id="@+id/inputEditText"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:hint="Enter numbers, one per line"
-            android:background="@android:drawable/editbox_background_normal"
+            android:hint="Enter numbers"
             android:padding="12dp"
             android:textSize="16sp"
             android:gravity="top"
             android:inputType="textMultiLine"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edit_text_background"
+            android:textColor="?attr/colorOnBackground"
+            android:textColorHint="?attr/colorOnBackground" />
 
+        <!-- Convert Button -->
         <Button
             android:id="@+id/convertButton"
             android:layout_width="match_parent"
@@ -43,6 +70,7 @@
             android:backgroundTint="#6200EE"
             android:textColor="#FFFFFF" />
 
+        <!-- Output -->
         <TextView
             android:id="@+id/outputTextView"
             android:layout_width="match_parent"
@@ -51,9 +79,10 @@
             android:textColor="?attr/colorOnBackground"
             android:layout_marginTop="20dp"
             android:padding="12dp"
-            android:background="#DDDDDD"
+            android:background="@drawable/output_background"
             android:minHeight="100dp" />
 
+        <!-- Copy/Export -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -82,6 +111,7 @@
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
+        <!-- Clear Button -->
         <Button
             android:id="@+id/clearButton"
             android:layout_width="match_parent"
@@ -91,6 +121,7 @@
             android:backgroundTint="#F44336"
             android:layout_marginTop="12dp" />
 
+        <!-- Footer -->
         <TextView
             android:id="@+id/footerTextView"
             android:layout_width="match_parent"
@@ -102,8 +133,6 @@
             android:layout_marginTop="24dp"
             android:autoLink="web"
             android:linksClickable="true"
-            android:onClick="openGitHub"
-            />
-
+            android:onClick="openGitHub" />
     </LinearLayout>
 </ScrollView>

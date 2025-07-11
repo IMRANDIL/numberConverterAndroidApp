@@ -1,10 +1,12 @@
-package com.example.numberconverterapp // Change this if your package is different
+// MainActivity.kt
+package com.example.numberconverterapp
 
 import android.content.*
 import android.os.Bundle
 import android.os.Environment
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var copyButton: Button
     private lateinit var exportButton: Button
     private lateinit var clearButton: Button
+    private lateinit var themeToggle: Switch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +32,19 @@ class MainActivity : AppCompatActivity() {
         copyButton = findViewById(R.id.copyButton)
         exportButton = findViewById(R.id.exportButton)
         clearButton = findViewById(R.id.clearButton)
+        themeToggle = findViewById(R.id.themeToggle)
+
+        // Theme Toggle
+        val isNightMode = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        themeToggle.isChecked = isNightMode
+
+        themeToggle.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         convertButton.setOnClickListener {
             val input = inputEditText.text.toString()
@@ -63,8 +79,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun formatNumbers(input: String): String {
         return input
-            .replace(",", " ") // Replace commas with spaces
-            .split(Regex("\\s+|\\n+")) // Split by whitespace or newline
+            .replace(",", " ")
+            .split(Regex("\\s+|\\n+"))
             .map { it.trim() }
             .filter { it.isNotEmpty() }
             .joinToString(", ") { "'$it'" }
@@ -75,8 +91,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
-
     private fun copyToClipboard(text: String) {
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("Converted Numbers", text)
@@ -86,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun exportToFile(text: String) {
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val fileName = "converted_numbers_$timeStamp.txt"
+        val fileName = "converted_numbers_${timeStamp}.txt"
         val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
         val file = File(downloadsDir, fileName)
 
@@ -94,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             FileOutputStream(file).use { stream ->
                 stream.write(text.toByteArray())
             }
-            toast("Exported to: Downloads/$fileName")
+            toast("Exported to: Downloads/\$fileName")
         } catch (e: Exception) {
             e.printStackTrace()
             toast("Failed to export file")
