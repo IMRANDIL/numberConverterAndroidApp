@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             FileOutputStream(file).use { stream ->
                 stream.write(text.toByteArray())
             }
-            toast("Exported to: Downloads/\$fileName")
+            toast("Exported to: Downloads/${fileName}")
         } catch (e: Exception) {
             e.printStackTrace()
             toast("Failed to export file")
